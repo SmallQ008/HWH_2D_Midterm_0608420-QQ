@@ -15,6 +15,8 @@ public class player : MonoBehaviour
     public FixedJoystick joystick;
     [Header ("變形元件")]
     public Transform tra;
+    [Header("動畫元件")]
+    public Animator ani;
 
     private void Move()
     {
@@ -23,7 +25,10 @@ public class player : MonoBehaviour
         print("水平:" + h);
         float v = joystick.Vertical;
         print("垂直:" + v);
-        tra.Translate(h * speed,Time.deltaTime,v *speed*Time.deltaTime, 0);
+        tra.Translate(h *speed*Time.deltaTime,v *speed*Time.deltaTime, 0);
+
+        ani.SetFloat("水平", h);
+        ani.SetFloat("垂直",v);
 
     }
     private void Update()
