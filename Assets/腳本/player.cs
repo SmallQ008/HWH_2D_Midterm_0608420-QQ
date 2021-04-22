@@ -24,8 +24,12 @@ public class player : MonoBehaviour
         float v = joystick.Vertical;
         print("垂直:" + v);
         tra.Translate(h * speed,Time.deltaTime,v *speed*Time.deltaTime, 0);
-    }
 
+    }
+    private void Update()
+    {
+        Move();
+    }
     private void Attack()
     {
         print("攻擊");
