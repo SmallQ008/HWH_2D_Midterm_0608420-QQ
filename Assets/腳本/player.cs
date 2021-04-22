@@ -17,6 +17,14 @@ public class player : MonoBehaviour
     public Transform tra;
     [Header("動畫元件")]
     public Animator ani;
+    [Header("偵測範圍")]
+    public float rangeAttack = 2.5f;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.2f);
+        Gizmos.DrawSphere(transform.position, rangeAttack);
+    }
 
     private void Move()
     {
@@ -35,9 +43,11 @@ public class player : MonoBehaviour
     {
         Move();
     }
-    private void Attack()
+    public void Attack()
     {
         print("攻擊");
+        RaycastHit2D hit =Physics2D.CircleCast(transform.position, rangeAttack, transform.up,0,1<<8 );
+        print("碰到的物件:" + hit.collider.name);
      
     }
 

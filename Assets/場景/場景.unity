@@ -1974,6 +1974,7 @@ MonoBehaviour:
   joystick: {fileID: 2061548625}
   tra: {fileID: 1070719476}
   ani: {fileID: 1070719477}
+  rangeAttack: 2.5
 --- !u!70 &1070719479
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2024,7 +2025,7 @@ GameObject:
   - component: {fileID: 1075774356}
   - component: {fileID: 1075774355}
   m_Layer: 5
-  m_Name: Button
+  m_Name: "\u653B\u64CA\u6309\u9215"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2091,7 +2092,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1075774356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1070719478}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1075774356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,8 +2489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1445997988}
   - component: {fileID: 1445997987}
-  m_Layer: 0
-  m_Name: Crate
+  m_Layer: 8
+  m_Name: "\u7BB1\u5B50"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
