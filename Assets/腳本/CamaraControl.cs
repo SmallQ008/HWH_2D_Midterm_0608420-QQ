@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class Camaracontrol : MonoBehaviour
+public class CamaraControl : MonoBehaviour
 {
     [Header("追蹤速度"), Range(0, 50)]
     public float speed = 1.5f;
@@ -28,11 +28,8 @@ public class Camaracontrol : MonoBehaviour
 
         transform.position = posCam;
 
-        
+
     }
 
- 
+
 }
-
-
-

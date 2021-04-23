@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -63,14 +64,19 @@ public class player : MonoBehaviour
     { 
     
     }
+    [Header("金幣數量")]
+    public Text textCoin;
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "金幣")
         {
             coin++;
             Destroy(collision.gameObject);
+            textCoin.text = "金幣" + coin;
         }
-        print(collision.gameObject);
+        //print(collision.gameObject);
     }
 
 }
