@@ -19,6 +19,8 @@ public class player : MonoBehaviour
     public Animator ani;
     [Header("偵測範圍")]
     public float rangeAttack = 2.5f;
+    [Header("吃金幣")]
+    private int coin;
 
     private void OnDrawGizmos()
     {
@@ -31,12 +33,11 @@ public class player : MonoBehaviour
         print("移動");
         float h = joystick.Horizontal;
         print("水平:" + h);
-        float v = joystick.Vertical;
-        print("垂直:" + v);
-        tra.Translate(h *speed*Time.deltaTime,v *speed*Time.deltaTime, 0);
+        
+       
+        tra.Translate(h *speed*Time.deltaTime,0, 0);
 
         ani.SetFloat("水平", h);
-        ani.SetFloat("垂直",v);
 
     }
     private void Update()
@@ -61,6 +62,15 @@ public class player : MonoBehaviour
     private void Dead()
     { 
     
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "金幣")
+        {
+            coin++;
+            Destroy(collision.gameObject);
+        }
+        print(collision.gameObject);
     }
 
 }
