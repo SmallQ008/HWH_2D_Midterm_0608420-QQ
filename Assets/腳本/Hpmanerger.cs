@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class coin : MonoBehaviour
+public class Hpmanerger : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
